@@ -624,6 +624,9 @@ export class DiscordBot {
                 const embeds = this.prepareEmbedSetWebhook(embedSet);
                 msg = await hook.send(embed.description, {
                     avatarURL: embed!.author!.iconURL,
+                    allowedMentions: {
+                      parse: ["users"],
+                    },
                     embeds,
                     files: opts.files,
                     username: embed!.author!.name,
