@@ -213,13 +213,6 @@ export class UserSyncroniser {
             "avatar_url": avatar,
             "displayname": memberState.displayName,
             "membership": "join",
-            "uk.half-shot.discord.member": {
-                bot: memberState.bot,
-                displayColor: memberState.displayColor,
-                id: memberState.id,
-                roles: memberState.roles,
-                username: memberState.username,
-            },
         });
 
         if (remoteUser) {

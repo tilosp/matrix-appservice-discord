@@ -331,13 +331,6 @@ describe("UserSyncroniser", () => {
                     "avatar_url": "",
                     "displayname": "Good Boy",
                     "membership": "join",
-                    "uk.half-shot.discord.member": {
-                        bot: false,
-                        displayColor: 0,
-                        id: "123456",
-                        roles: [],
-                        username: "",
-                    },
                 },
             );
         });
@@ -384,10 +377,6 @@ describe("UserSyncroniser", () => {
                 "@_discord_123456:localhost", {
                     "displayColor": 0,
                     "displayname": state.displayName,
-                    "uk.half-shot.discord.member": {
-                        id: "123456",
-                        roles: state.roles,
-                    },
                 },
             );
         });
@@ -410,10 +399,6 @@ describe("UserSyncroniser", () => {
                     "bot": false,
                     "displayColor": 0,
                     "displayname": state.displayName,
-                    "uk.half-shot.discord.member": {
-                        id: "123456",
-                        roles: state.roles,
-                    },
                 },
             );
 
@@ -426,10 +411,6 @@ describe("UserSyncroniser", () => {
                 "@_discord_123456:localhost", {
                     "bot": true,
                     "displayname": state.displayName,
-                    "uk.half-shot.discord.member": {
-                        id: "123456",
-                        roles: state.roles,
-                    },
                 },
             );
         });
@@ -453,10 +434,6 @@ describe("UserSyncroniser", () => {
                     "bot": false,
                     "displayColor": TEST_COLOR,
                     "displayname": state.displayName,
-                    "uk.half-shot.discord.member": {
-                        id: "123456",
-                        roles: state.roles,
-                    },
                 },
             );
         });
@@ -479,10 +456,6 @@ describe("UserSyncroniser", () => {
                     "bot": false,
                     "displayColor": 0,
                     "displayname": state.displayName,
-                    "uk.half-shot.discord.member": {
-                        id: "123456",
-                        roles: state.roles,
-                    },
                     "username": "user#1234",
                 },
             );
