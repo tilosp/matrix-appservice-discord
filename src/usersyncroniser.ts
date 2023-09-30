@@ -213,6 +213,13 @@ export class UserSyncroniser {
             "avatar_url": avatar,
             "displayname": memberState.displayName,
             "membership": "join",
+            "uk.half-shot.discord.member": {
+                bot: memberState.bot,
+                displayColor: memberState.displayColor,
+                id: memberState.id,
+                roles: memberState.roles,
+                username: memberState.username,
+            },
         });
 
         if (remoteUser) {
@@ -291,13 +298,11 @@ export class UserSyncroniser {
             displayName: name,
             id: newMember.id,
             mxUserId: `@_discord_${newMember.id}:${this.config.bridge.domain}`,
-            roles: newMember.roles.cache.map((role) => {
-                return {
-                    color: role.color,
-                    name: role.name,
-                    position: role.position,
-                };
-            }),
+            roles: newMember.roles.cache.map((role) => { return {
+                color: role.color,
+                name: role.name,
+                position: role.position,
+            }; }),
             username: newMember.user.tag,
         });
         return guildState;
