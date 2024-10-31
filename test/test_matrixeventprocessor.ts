@@ -425,19 +425,6 @@ describe("MatrixEventProcessor", () => {
             await processor.ProcessStateEvent(event);
             expect(STATE_EVENT_MSG).to.equal("");
         });
-        it("Should echo kicks", async () => {
-            const {processor} =  createMatrixEventProcessor();
-            const event = {
-                content: {
-                    membership: "leave",
-                },
-                sender: "@user:localhost",
-                state_key: "@user2:localhost",
-                type: "m.room.member",
-            } as IMatrixEvent;
-            await processor.ProcessStateEvent(event);
-            expect(STATE_EVENT_MSG).to.equal("`@user:localhost` kicked `@user2:localhost` from the room on Matrix.");
-        });
         it("Should echo leaves", async () => {
             const {processor} =  createMatrixEventProcessor();
             const event = {
@@ -466,19 +453,6 @@ describe("MatrixEventProcessor", () => {
             } as IMatrixEvent;
             await processor.ProcessStateEvent(event);
             expect(STATE_EVENT_MSG).to.equal("");
-        });
-        it("Should echo bans", async () => {
-            const {processor} =  createMatrixEventProcessor();
-            const event = {
-                content: {
-                    membership: "ban",
-                },
-                sender: "@user:localhost",
-                state_key: "@user2:localhost",
-                type: "m.room.member",
-            } as IMatrixEvent;
-            await processor.ProcessStateEvent(event);
-            expect(STATE_EVENT_MSG).to.equal("`@user:localhost` banned `@user2:localhost` from the room on Matrix.");
         });
     });
     describe("EventToEmbed", () => {
